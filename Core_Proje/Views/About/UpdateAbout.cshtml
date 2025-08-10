@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid mt-12">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Yeni Hakkımda Kaydı</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Id</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutID" placeholder="Id" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Başlık</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutTitle" placeholder="Başlık">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Açıklama</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutDescription" placeholder="Açıklama">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Yaş</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutAge" placeholder="Yaş">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Mail</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutMail" placeholder="Mail">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Telefon Numarası</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutPhone" placeholder="Telefon Numarası">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Adres</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutAddress" placeholder="Adres">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Görsel Yolu</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutImageUrl" placeholder="Görsel Yolu">
+                        </div>
+                        <button type="submit" class="btn btn-success">Kaydet</button>
+                    </form>
+                    <br />
+                    <a href="/About/Index/" class="btn badge-primary">Vazgeç</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

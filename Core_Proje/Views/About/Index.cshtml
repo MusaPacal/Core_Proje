@@ -1,0 +1,88 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table align-items-center table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="name">#</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="name">Başlık</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="budget">Açıklama</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Yaş</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Mail</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Telefon Numarası</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Adres</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Görsel Yolu</th>
+                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="budget">@item.AboutID</td>
+                    <td>
+                        <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i>
+                            <span class="status">@item.AboutTitle</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="status" title="@item.AboutDescription">
+                            @(item.AboutDescription?.Length > 50
+                                                    ? item.AboutDescription.Substring(0, 50) + "..."
+                                                    : item.AboutDescription)
+                    </td>
+                    <td>
+                        <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i>
+                            <span class="status">@item.AboutAge</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i>
+                            <span class="status">@item.AboutMail</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i>
+                            <span class="status">@item.AboutPhone</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i>
+                            <span class="status">@item.AboutAddress</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge badge-dot mr-4">
+                            <i class="bg-warning"></i>
+                            <span class="status">@item.AboutImageUrl</span>
+                        </span>
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <a class="btn btn-sm alert-success text-white" role="button" data-toggle="dropdown">
+                                <img src="~/Template/images/more.png" width="20" height="20" alt="İşlemler">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="/About/DeleteAbout/@item.AboutID">Sil</a>
+                                <a class="dropdown-item" href="/About/UpdateAbout/@item.AboutID">Düzenle</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/About/AddAbout/" class="btn btn-success">Yeni Hakkımda Ekle</a>
+</div>
+
