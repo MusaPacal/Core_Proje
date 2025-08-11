@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Feature
 @{
     ViewData["Title"] = "AddFeature";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 <div class="container-fluid mt-12">
@@ -26,6 +26,7 @@
                             <input type="text" id="input-title" class="form-control" asp-for="FeatureName" placeholder="Feature Ad">
                         </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
+                        <a href="/Feature/Index/" class="btn btn-info">Geri</a>
                     </form>
                 </div>
             </div>

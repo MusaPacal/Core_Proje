@@ -13,5 +13,6 @@ namespace EntityLayer.Concrete
         public int SkillID { get; set; }
         public string SkillTitle { get; set; }
         public string SkillValue { get; set; }
+        public string SkillColorValue { get; set; }
     }
 }

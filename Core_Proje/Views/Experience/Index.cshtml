@@ -3,67 +3,49 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
-
-<div class="table-responsive">
-    <table class="table align-items-center table-dark">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="name">#</th>
-                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="budget">Şirket Adı</th>
-                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Açıklama</th>
-                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">İkon Url</th>
-                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">Tarih</th>
-                <th scope="col" class="sort text-white text-uppercase font-weight-bold fs-6" data-sort="status">İşlemler</th>
-            </tr>
-        </thead>
-        <tbody class="list">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td class="budget">@item.ExperienceID</td>
-                    <td>
-                        <span class="badge badge-dot mr-4">
-                            <i class="bg-warning"></i>
-                            <span class="status">@item.ExperienceName</span>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="status" title="@item.ExperienceDescription">
-                            @(item.ExperienceDescription?.Length > 50
-                                                    ? item.ExperienceDescription.Substring(0, 50) + "..."
-                                                    : item.ExperienceDescription)
-                    </span>
-                    </td>
-                    <td>
-                        <span class="badge badge-dot mr-4">
-                            <i class="bg-warning"></i>
-                            <span class="status">@item.ExperienceImgUrl</span>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="badge badge-dot mr-4">
-                            <i class="bg-warning"></i>
-                            <span class="status">@item.ExperienceDate</span>
-                        </span>
-                    </td>
-                    <td>
-                        <div class="dropdown">
-                            <a class="btn btn-sm alert-success text-white" role="button" data-toggle="dropdown">
-                                <img src="~/Template/images/more.png" width="20" height="20" alt="İşlemler">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item" href="/Experience/DeleteExperience/@item.ExperienceID">Sil</a>
-                            <a class="dropdown-item" href="/Experience/UpdateExperinece/@item.ExperienceID">Düzenle</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <br />
-    <a href="/Experience/AddExperience/" class="btn btn-success">Yeni Deneyim Ekle</a>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyimler</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Şirket Adı</th>
+                            <th>Açıklama</th>
+                            <th>İkon Url</th>
+                            <th>Tarih</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {                           
+                        <tr>
+                            <td>@item.ExperienceID</td>
+                            <td>@item.ExperienceName</td>
+                            <td>
+                                <span class="status" title="@item.ExperienceDescription">
+                                        @(item.ExperienceDescription?.Length > 50
+                                                                            ? item.ExperienceDescription.Substring(0, 50) + "..."
+                                                                            : item.ExperienceDescription)
+                                </span>
+                            </td>
+                            <td><label class="badge badge-info">@item.ExperienceImgUrl</label></td>
+                            <td><label class="badge badge-info">@item.ExperienceDate</label></td>
+                            <td><a class="btn btn-danger" href="/Experience/DeleteExperience/@item.ExperienceID">Sil</a></td>
+                            <td><a class="btn btn-warning" href="/Experience/UpdateExperinece/@item.ExperienceID">Düzenle</a></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a href="/Experience/AddExperience/" class="btn btn-success">Yeni Deneyim Ekle</a>
+            </div>
+        </div>
+    </div>
 </div>
-

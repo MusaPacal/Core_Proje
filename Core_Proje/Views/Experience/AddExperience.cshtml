@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Experience
 @{
     ViewData["Title"] = "AddExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 
@@ -31,6 +31,7 @@
                             <input type="text" id="input-title" class="form-control" asp-for="ExperienceDate" placeholder="Tarih">
                         </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
+                        <a href="/Experience/Index/" class="btn btn-info">Geri</a>
                     </form>
                 </div>
             </div>

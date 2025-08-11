@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Portfolio
 @{
     ViewData["Title"] = "AddPortfolio";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 <div class="container-fluid mt-12">
@@ -44,9 +44,8 @@
                             <span asp-validation-for="PortfolioProjectLanguage" class="text-danger"></span>
                         </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
+                        <a href="/Portfolio/Index/" class="btn btn-info">Geri</a>
                     </form>
-                    <br />
-                    <a href="/Portfolio/Index/" class="btn badge-primary">Vazgeç</a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.About
 @{
     ViewData["Title"] = "UpdateAbout";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 
@@ -16,7 +16,7 @@
                     <form method="post">
                         <div class="form-group">
                             <label class="form-control-label" for="input-title">Id</label>
-                            <input type="text" id="input-title" class="form-control" asp-for="AboutID" placeholder="Id" readonly>
+                            <input type="text" id="input-title" class="form-control" asp-for="AboutID" placeholder="Id" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="input-title">Başlık</label>
@@ -47,9 +47,8 @@
                             <input type="text" id="input-title" class="form-control" asp-for="AboutImageUrl" placeholder="Görsel Yolu">
                         </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
+                        <a href="/About/Index/" class="btn badge-info">Vazgeç</a>
                     </form>
-                    <br />
-                    <a href="/About/Index/" class="btn badge-primary">Vazgeç</a>
                 </div>
             </div>
         </div>

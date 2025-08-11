@@ -243,6 +243,10 @@ namespace DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SkillID"));
 
+                    b.Property<string>("SkillColorValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SkillTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

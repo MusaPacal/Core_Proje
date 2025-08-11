@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "AddSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 <div class="col-12 grid-margin stretch-card">
@@ -12,7 +12,7 @@
             <form method="post" class="forms-sample">
                 <div class="form-group">
                     <label for="exampleInputName1">Id</label>
-                    <input type="text" class="form-control" asp-for="SkillID" readonly>
+                    <input type="text" class="form-control" asp-for="SkillID" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
                 </div>
                 <div class="form-group">
                     <label for="input-title">Başlık</label>
@@ -22,7 +22,12 @@
                     <label for="input-value">Oran</label>
                     <input type="text" class="form-control" id="input-value" asp-for="SkillValue" placeholder="Örn: 85%">
                 </div>
+                <div class="form-group">
+                    <label for="input-title">Css Renk Kodu</label>
+                    <input type="text" class="form-control" id="input-title" asp-for="SkillColorValue" placeholder="css kodu">
+                </div>
                 <button type="submit" class="btn btn-success me-2">Kaydet</button>
+                <a href="/Skill/Index/" class="btn badge-info">Geri</a>
             </form>
         </div>
     </div>

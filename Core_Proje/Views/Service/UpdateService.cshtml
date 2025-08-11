@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Service
 @{
     ViewData["Title"] = "UpdateService";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 <div class="container-fluid mt-12">
@@ -15,7 +15,7 @@
                     <form method="post">
                         <div class="form-group">
                             <label class="form-control-label" for="input-title">Id</label>
-                            <input type="text" id="input-title" class="form-control" asp-for="ServiceID" placeholder="Id" readonly>
+                            <input type="text" id="input-title" class="form-control" asp-for="ServiceID" placeholder="Id" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="input-title">Başlık</label>
@@ -26,9 +26,8 @@
                             <input type="text" id="input-title" class="form-control" asp-for="ServiceImgUrl" placeholder="Görsel İkon Yolu">
                         </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
+                        <a href="/Service/Index/" class="btn badge-info">Vazgeç</a>
                     </form>
-                    <br />
-                    <a href="/Service/Index/" class="btn badge-primary">Vazgeç</a>
                 </div>
             </div>
         </div>

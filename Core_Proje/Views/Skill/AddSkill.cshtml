@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "AddSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 <div class="container-fluid mt-12">
@@ -22,7 +22,12 @@
                             <label class="form-control-label" for="input-value">Oran</label>
                             <input type="text" id="input-value" class="form-control" asp-for="SkillValue" placeholder="Örn: 85%">
                         </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-value">Css Renk Kodu</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="SkillColorValue" placeholder="css kodu">
+                        </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
+                        <a href="/Skill/Index/" class="btn badge-info">Geri</a>
                     </form>
                 </div>
             </div>

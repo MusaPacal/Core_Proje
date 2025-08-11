@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.About
 @{
     ViewData["Title"] = "AddAbout";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
 }
 
 <div class="container-fluid mt-12">
@@ -42,9 +42,8 @@
                             <input type="text" id="input-title" class="form-control" asp-for="AboutImageUrl" placeholder="Görsel Yolu">
                         </div>
                         <button type="submit" class="btn btn-success">Kaydet</button>
-                    </form>
-                    <br />
-                    <a href="/About/Index/" class="btn badge-primary">Vazgeç</a>
+                        <a href="/About/Index/" class="btn badge-info">Vazgeç</a>
+                    </form>   
                 </div>
             </div>
         </div>
