@@ -17,5 +17,6 @@ namespace EntityLayer.Concrete
         public string PortfolioLink { get; set; }
         public string PortfolioIcon { get; set; }
         public string PortfolioProjectLanguage{ get; set; }
+        public string PortfolioDate { get; set; }
     }
 }
