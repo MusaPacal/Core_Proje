@@ -33,8 +33,8 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult SendMessagePartial(Message p)
         {
-            p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            p.Status = true;
+            p.Date = DateTime.Now;
+            p.Status = false;
             _messageService.TAdd(p);
             return RedirectToAction("Index", "Default");
         }

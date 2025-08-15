@@ -18,5 +18,6 @@ namespace EntityLayer.Concrete
         public string PortfolioIcon { get; set; }
         public string PortfolioProjectLanguage{ get; set; }
         public string PortfolioDate { get; set; }
+        public string PortfolioValue { get; set; }
     }
 }

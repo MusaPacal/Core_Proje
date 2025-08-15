@@ -19,6 +19,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.PortfolioLink).NotEmpty().WithMessage("Proje Linki Boş Olamaz");
             RuleFor(x => x.PortfolioIcon).NotEmpty().WithMessage("Proje Dil İkonu Boş Olamaz");
             RuleFor(x => x.PortfolioDate).NotEmpty().WithMessage("Proje Dil İkonu Boş Olamaz");
+            RuleFor(x => x.PortfolioValue).NotEmpty().WithMessage("Proje Dil İkonu Boş Olamaz");
             
         }
     }

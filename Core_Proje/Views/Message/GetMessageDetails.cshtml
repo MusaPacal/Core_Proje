@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewData["Title"] = "GetMessageDetails";
+    Layout = "~/Views/Shared/NewLayout.cshtml";
+}
+
+<div class="container-fluid mt-12">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Id</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="MessageID" placeholder="Id" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Adı</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="MessageName" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">İletişim Bilgisi</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="MessageMail" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Tarih</label>
+                            <input type="text" id="input-title" class="form-control" asp-for="Date" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="input-title">Mesaj</label>
+                            <textarea id="input-description" class="form-control" asp-for="MessageContent" readonly style="background-color:#1a1c23; color:#fff; border:1px solid #444; opacity:1;"></textarea>
+                        </div>
+                        <a href="/Message/Index/" class="btn btn-info">Geri</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

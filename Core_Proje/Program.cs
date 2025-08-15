@@ -27,6 +27,12 @@ builder.Services.AddScoped<ISocialMediaService,SocialMediaManager>();
 builder.Services.AddScoped<ISocialMediaDal,EfSocialMediaDal>();
 builder.Services.AddScoped<IContactService,ContactManager>();
 builder.Services.AddScoped<IContactDal,EfContactDal>();
+builder.Services.AddScoped<IUserService,UserManager>();
+builder.Services.AddScoped<IUserDal,EfUserDal>();
+builder.Services.AddScoped<IUserMessageService,UserMessageManager>();
+builder.Services.AddScoped<IUserMessageDal,EfUserMessageDal>();
+builder.Services.AddScoped<IToDoListService,ToDoListManager>();
+builder.Services.AddScoped<IToDoListDal,EfToDoListDal>();
 
 var app = builder.Build();
 
@@ -44,6 +50,15 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+    );
+});
+
 
 app.MapControllerRoute(
     name: "default",

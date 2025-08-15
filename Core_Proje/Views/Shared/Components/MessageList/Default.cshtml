@@ -1,0 +1,47 @@
+﻿@using EntityLayer.Concrete
+@model List<Message>
+
+<div class="row ">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Son Mesajlar</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Adı</th>
+                                <th>Mail</th>
+                                <th>Tarih</th>
+                                <th>Durum</th>
+                                <th>Mesajı Gör</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {                          
+                            <tr>
+                                <td>@item.MessageName</td>
+                                <td>@item.MessageMail</td>
+                                <td>@item.Date</td>
+                                <td>
+                                @if(item.Status == true)
+                                {
+                                     <div class="badge badge-outline-success">Okundu</div>
+                                }
+                                else
+                                {
+                                     <div class="badge badge-outline-danger">Okunmadı</div>   
+                                }
+                                    
+                                </td>
+                                <td><a class="btn btn-info" href="/Message/GetMessageDetails/@item.MessageID">Detay</a></td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,6 +19,7 @@
                             <th>Büyük Resim Yolu</th>
                             <th>Proje Linki</th>
                             <th>Tarih</th>
+                            <th>Durum</th>
                             <th>Sil</th>
                             <th>Düzenle</th>
                         </tr>
@@ -43,6 +44,7 @@
                                 <td>@item.PortfolioBigImgUrl</td>
                                 <td><label class="badge badge-info">@item.PortfolioLink</label></td>
                                 <td><label class="badge badge-info">@item.PortfolioDate</label></td>
+                                <td><label class="badge badge-info">@item.PortfolioValue</label></td>
                                 <td><a class="btn btn-danger" href="/Portfolio/DeletePortfolio/@item.PortfolioID">Sil</a></td>
                                 <td><a class="btn btn-warning" href="/Portfolio/UpdatePortfolio/@item.PortfolioID">Düzenle</a></td>
                         </tr>
